@@ -1,8 +1,8 @@
 -- Setup Mason to automatically install LSP servers
 require('mason').setup()
-require('mason-lspconfig').setup({ 
+require('mason-lspconfig').setup({
   PATH = 'prepend',
-  automatic_installation = true 
+  automatic_installation = true
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())

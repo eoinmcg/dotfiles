@@ -21,7 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-setxkbmap -option caps:escape
+#setxkbmap -option caps:escape
 
 TZ='Europe/Sofia'; export TZ
 #TZ='Europe/Belfast'; export TZ
