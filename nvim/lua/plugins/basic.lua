@@ -11,14 +11,15 @@
 return {
   -- add gruvbox
   -- { "loctvl842/monokai-pro.nvim" },
+    { "tanvirtin/monokai.nvim" },
 
   -- Configure LazyVim to load gruvbox
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "monokai-pro-classic",
-  --   },
-  -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "monokai_soda",
+    },
+  },
 
   -- change trouble config
   {
