@@ -4,6 +4,8 @@
 
 vim.opt.relativenumber = false
 
+vim.g.autoformat = false
+
 vim.api.nvim_create_autocmd({
   "BufNewFile",
   "BufRead",
