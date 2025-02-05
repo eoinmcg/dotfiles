@@ -1,6 +1,6 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
---if true then return {} end
+-- if true then return {} end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
 --
@@ -10,16 +10,15 @@
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  -- { "loctvl842/monokai-pro.nvim" },
-    { "tanvirtin/monokai.nvim" },
+  -- { "ellisonleao/gruvbox.nvim" },
 
   -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "monokai_soda",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
 
   -- change trouble config
   {
@@ -29,17 +28,17 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = true },
+  { "folke/trouble.nvim", enabled = false },
 
   -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = { "hrsh7th/cmp-emoji" },
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     table.insert(opts.sources, { name = "emoji" })
+  --   end,
+  -- },
 
   -- change some telescope options and a keymap to browse plugin files
   {
@@ -56,7 +55,6 @@ return {
     -- change some options
     opts = {
       defaults = {
-        file_ignore_patterns = { "node_modules", "vendor" },
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
@@ -107,7 +105,7 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
-        -- Specify * to use this f nction as a fallback for any server
+        -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
       },
     },
@@ -124,6 +122,7 @@ return {
       ensure_installed = {
         "bash",
         "html",
+        "javascript",
         "json",
         "lua",
         "markdown",
@@ -158,7 +157,11 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
+      table.insert(opts.sections.lualine_x, {
+        function()
+          return "😄"
+        end,
+      })
     end,
   },
 
@@ -174,7 +177,7 @@ return {
   },
 
   -- use mini.starter instead of alpha
- -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
+  { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },

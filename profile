@@ -34,3 +34,4 @@ TZ='Europe/Sofia'; export TZ
 export LANG="en_GB.UTF-8"
 export LANGUAGE="en_GB:en"
 export LC_MESSAGES="en_GB.UTF-8"
+. "/home/eoin/.deno/env"

@@ -1,2 +1,4 @@
 -- disable buffer tabs
-return { { "akinsho/bufferline.nvim", enabled = false } }
+return {
+  { "akinsho/bufferline.nvim", enabled = false } 
+}
