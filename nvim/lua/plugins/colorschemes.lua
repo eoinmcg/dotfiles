@@ -4,8 +4,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "monokai_soda",
-      colorscheme = "nightfox",
+      colorscheme = "monokai_soda",
+      -- colorscheme = "nightfox",
     },
   },
 

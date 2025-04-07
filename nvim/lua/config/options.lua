@@ -18,3 +18,12 @@ vim.api.nvim_create_autocmd({
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = "*.wasp",
+  callback = function()
+    vim.diagnostic.disable(0)  -- Disable diagnostics for current buffer
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_option(buf, "filetype", "javascript")
+  end
+})
